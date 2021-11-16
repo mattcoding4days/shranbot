@@ -19,20 +19,18 @@ class HerbertWest(discord.Client):
         """
         @description: retrieve the guild name
         """
-        active_guild = Err("No active server was found")
         for guild in self.guilds:
             if guild.name == Config.discord_guild():
-                active_guild = Ok(str(guild.name))
-                break
+                return Ok(str(guild.name))
 
-        return active_guild
+        return Err("No active server was found")
 
     async def on_ready(self):
         """
         @description: test method
         """
-        gname = await self.guild_name()
-        if gname.is_ok():
-            Log.info("Logged on as %s in server %s", self.user, gname.value)
+        res = await self.guild_name()
+        if res.is_ok():
+            Log.info("Logged on as %s in server %s", self.user, res.value)
         else:
-            Log.error("%s", gname.value)
+            Log.error("%s", res.value)
