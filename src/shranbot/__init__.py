@@ -50,6 +50,8 @@ class Config(metaclass=ThreadSafeMeta):
     """
     try:
         __config: Dict[str, Any] = dotenv_values('.env')
+        __env = str(__config["APP_ENV"])
+        __discord_token = str(__config["DISCORD_TOKEN"])
         __version = "1.0.0"
         __package: str = __package__
         __base_dir = Path(__file__).resolve(
@@ -57,10 +59,23 @@ class Config(metaclass=ThreadSafeMeta):
         __logfile_name = f'{__package}-{__version}.log'
         __config_dir = Path().home() / '.config' / __package
         __default_env = 'dev'
-        __env = str(__config["APP_ENV"])
     except KeyError as error:
         sys.stderr.write(f"Dotenv config error: {error} is missing\n")
         sys.exit(1)
+
+    @classmethod
+    def env(cls) -> str:
+        """
+        @description: getter for config
+        """
+        return cls.__env
+
+    @classmethod
+    def discord_token(cls) -> str:
+        """
+        @description: getter for the discord token
+        """
+        return cls.__discord_token
 
     @classmethod
     def version(cls) -> str:
@@ -103,10 +118,3 @@ class Config(metaclass=ThreadSafeMeta):
         @description: getter for the default env
         """
         return cls.__default_env
-
-    @classmethod
-    def env(cls) -> str:
-        """
-        @description: getter for config
-        """
-        return cls.__env

@@ -10,7 +10,7 @@ import sys
 from colorama import Back, Fore, init
 
 from shranbot import Config
-from shranbot.logger import LOGGING_CONFIG
+from shranbot.logging import LOGGING_CONFIG
 
 
 init(autoreset=True)
@@ -75,7 +75,7 @@ class Logger:
             # return dev as default logger
             sys.stderr.write(
                 f"\n{Back.BLACK}{Fore.RED}{Config.env()}: IS NOT A VALID LOGGER\n"
-                f"{Back.BLACK}{Fore.YELLOW}FALLING BACK TO {Config.default_env()}\n")
+                f"{Back.BLACK}{Fore.YELLOW}Falling back to {Config.default_env()}\n")
             logger = logging.getLogger(Config.default_env())
             return logger
 

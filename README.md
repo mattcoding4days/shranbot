@@ -1,8 +1,17 @@
-# Discord bot for Shran development discord server
+# shranbot
 
-> All dev dependencies are installed, for testing, and logging, as well as static anaylsis tools like mypy.
+> A discord bot named `Herbert West` that will monitor the Shran development discord server.
 
-## This project is built and managed with python poetry
+## Using dotenv
+
+> shranbot uses a .env file to load secrets
+
+```bash
+APP_ENV=dev
+DISCORD_TOKEN="The token"
+```
+
+## Built with python poetry
 
 [Read the Docs](https://python-poetry.org/docs/cli/)
 
@@ -16,12 +25,3 @@ poetry add python-dotenv
 # If you want to add a new python package only for development (dev dependency)
 poetry add mypy -D
 ```
-
-## Using dotenv
-
-> shranbot uses a .env file to load secrets
-
-```bash
-APP_ENV=dev
-```
-
