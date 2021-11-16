@@ -52,6 +52,7 @@ class Config(metaclass=ThreadSafeMeta):
         __config: Dict[str, Any] = dotenv_values('.env')
         __env = str(__config["APP_ENV"])
         __discord_token = str(__config["DISCORD_TOKEN"])
+        __discord_guild = str(__config["DISCORD_GUILD"])
         __version = "1.0.0"
         __package: str = __package__
         __base_dir = Path(__file__).resolve(
@@ -76,6 +77,13 @@ class Config(metaclass=ThreadSafeMeta):
         @description: getter for the discord token
         """
         return cls.__discord_token
+
+    @classmethod
+    def discord_guild(cls) -> str:
+        """
+        @description: getter for the discord guild name
+        """
+        return cls.__discord_guild
 
     @classmethod
     def version(cls) -> str:

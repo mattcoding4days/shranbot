@@ -8,7 +8,8 @@
 
 ```bash
 APP_ENV=dev
-DISCORD_TOKEN="The token"
+DISCORD_TOKEN=The-Token
+DISCORD_GUILD=Shran-development
 ```
 
 ## Built with python poetry

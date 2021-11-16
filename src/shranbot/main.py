@@ -15,5 +15,5 @@ def run() -> None:
     """
     Example function to execute through poetry scripts
     """
-    herbet = HerbertWest()
-    herbet.run(Config.discord_token())
+    herbert = HerbertWest()
+    herbert.run(Config.discord_token())
