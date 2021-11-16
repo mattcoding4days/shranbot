@@ -6,9 +6,7 @@ Example Driver code
 # package
 from shranbot import Config
 from shranbot.services.bot import HerbertWest
-from shranbot.logging.pkg_logger import Logger
-
-Log = Logger().get_logger()
+# from shranbot.services.tickers.dmgi import Dmgi
 
 
 def run() -> None:
