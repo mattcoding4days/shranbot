@@ -6,6 +6,7 @@ import discord
 from result import Ok, Err, Result
 from shranbot import Config
 from shranbot.logging.pkg_logger import Logger
+from shranbot.services.tickers.dmgi import Dmgi
 
 Log = Logger().get_logger()
 
@@ -55,3 +56,7 @@ class HerbertWest(discord.Client):
 
         if message.content.startswith("$hello"):
             await message.channel.send("Hello There")
+
+        if message.content.startswith("$dmgi_close"):
+            dmgi = Dmgi()
+            await message.channel.send(f"{dmgi.todays_closing_price()}")

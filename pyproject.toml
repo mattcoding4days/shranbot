@@ -11,6 +11,8 @@ colorama = "^0.4.4"
 python-dotenv = "^0.17.0"
 "discord.py" = "^1.7.3"
 result = "^0.6.0"
+yfinance = "^0.1.66"
+emoji = "^1.6.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
