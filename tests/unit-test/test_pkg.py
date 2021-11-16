@@ -4,7 +4,7 @@ Showcasing two different ways to properly test your code
 1. By importing the package in directly.
 2. By passing in a function fixture defined in conftest.py
 """
-from kickstart import Config
+from shranbot import Config
 
 
 def test_version_using_fixture(pkg_test):
@@ -12,14 +12,15 @@ def test_version_using_fixture(pkg_test):
     testing version from passing the module
     in as a fixture
     """
-    assert pkg_test.Config.package() == 'kickstart'
+    assert pkg_test.Config.package() == 'shranbot'
 
 
 def test_package_name():
     """
     testing version from importing it
     """
-    assert Config.package() == 'kickstart'
+    assert Config.package() == 'shranbot'
+
 
 def test_default_env():
     """

@@ -4,9 +4,9 @@ Example Driver code
 # standard lib
 
 # package
-from kickstart import Config
-from kickstart.logger import pkg_logger as pl
-from kickstart.command_line import Cli
+from shranbot import Config
+from shranbot.logger import pkg_logger as pl
+from shranbot.command_line import Cli
 
 # create the logger at module level
 Log = pl.Logger().get_logger()
@@ -22,7 +22,7 @@ def run() -> None:
 
     try:
         Log.info("APP_ENV: %s :: package name: %s@%s",
-                    Config.env(), Config.package(), Config.version())
+                 Config.env(), Config.package(), Config.version())
     except KeyError as error:
         Log.error(
             'Could not find %s in .env file. Please consult the README', error)

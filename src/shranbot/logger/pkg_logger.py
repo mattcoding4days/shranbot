@@ -9,8 +9,8 @@ import sys
 
 from colorama import Back, Fore, init
 
-from kickstart import Config
-from kickstart.logger import LOGGING_CONFIG
+from shranbot import Config
+from shranbot.logger import LOGGING_CONFIG
 
 
 init(autoreset=True)

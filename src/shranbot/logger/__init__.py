@@ -2,7 +2,7 @@
 Set up a thread safe singleton meta class
 """
 from typing import Any, Dict
-from kickstart import Config
+from shranbot import Config
 
 LOGGING_CONFIG: Dict[str, Any] = {
     "version": 1,

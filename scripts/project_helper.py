@@ -5,7 +5,8 @@ pyproject.toml
 import subprocess as sp
 import sys
 
-from kickstart import Config
+from shranbot import Config
+
 
 def stub_gen() -> None:
     """

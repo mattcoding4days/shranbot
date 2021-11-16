@@ -19,20 +19,20 @@ import sys
 import pytest
 
 # package
-import kickstart as ks
+import shranbot
 
 # noinspection PyCallByClass
 
 
 @pytest.fixture()
-def pkg_test() -> None:
+def pkg_test():
     """
     test version
     """
     # Setup code
     sys.stdout.write('\nRunning setup code for module\n')
 
-    yield ks
+    yield shranbot
 
     # tear down code
     sys.stdout.write('Running Teardown code for module\n')

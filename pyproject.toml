@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "kickstart"
+name = "shranbot"
 version = "1.0.0"
-description = "Poetry project set up and ready to go"
-authors = ["Matt Williams <mattltf@pm.me>"]
+description = "Discord bot for Shran development discord server"
+authors = ["Matt Williams <matt@dmgblockchain.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -19,7 +19,7 @@ pylint = "^2.7.2"
 autopep8 = "^1.5.7"
 
 [tool.poetry.scripts]
-drive = "kickstart.main:run"
+drive = "shranbot.main:run"
 tests = "scripts.project_helper:run_tests"
 stubs = "scripts.project_helper:stub_gen"
 analyze = "scripts.project_helper:run_analyzer"

@@ -4,7 +4,7 @@ command line arguments for this app
 
 import argparse
 
-from kickstart import ThreadSafeMeta
+from shranbot import ThreadSafeMeta, Config
 
 
 class Cli(metaclass=ThreadSafeMeta):
@@ -14,9 +14,9 @@ class Cli(metaclass=ThreadSafeMeta):
 
     def __init__(self):
         self.__parser = argparse.ArgumentParser(
-            prog="kickstart",
+            prog=Config.package(),
             usage="%(prog)s [options]",
-            description="Example package",
+            description="Discord bot",
             allow_abbrev=False,
         )
         self.__parser.add_argument(
