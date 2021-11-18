@@ -19,8 +19,6 @@ jobs:
         poetry-version: [1.1.11]
         os: [ubuntu-20.04]
         runs-on: ${{ matrix.os }}
-    env:
-      APP_ENV: dev
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -32,5 +30,7 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install project dependencies
         run: poetry install
+        - name: Create .env file
+          run : echo "APP_ENV=dev" > .env
       - name: Run Tests
         run: poetry run tests
