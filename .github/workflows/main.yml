@@ -31,7 +31,6 @@ jobs:
       - name: Install project dependencies
         run: poetry install
       - name: Create .env file
-        run: ls |
-             echo "APP_ENV=dev" > .env
+        run: echo "APP_ENV=dev" > .env
       - name: Run Tests
         run: poetry run tests
